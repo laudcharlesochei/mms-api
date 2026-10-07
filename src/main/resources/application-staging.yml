@@ -1,0 +1,4 @@
+# Heroku staging. The datasource is built from JAWSDB_URL by JawsDbEnvironmentPostProcessor.
+springdoc:
+  swagger-ui:
+    enabled: ${SWAGGER_ENABLED:true}

@@ -1,0 +1,7 @@
+# Heroku release phase: run Flyway migrations, then exit (no web server).
+spring:
+  main:
+    web-application-type: none
+mms:
+  migrate-only: true
+  seed-demo-data: false

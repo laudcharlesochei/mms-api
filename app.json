@@ -1,0 +1,22 @@
+{
+  "name": "MMS API (V1 - JawsDB)",
+  "description": "Mentor Management System REST API - Spring Boot on Heroku with JawsDB MySQL",
+  "repository": "https://github.com/your-org/mms-api-v1",
+  "stack": "heroku-24",
+  "buildpacks": [{ "url": "heroku/java" }],
+  "addons": [{ "plan": "jawsdb:kitefin" }],
+  "env": {
+    "SPRING_PROFILES_ACTIVE": { "value": "staging" },
+    "AUTH_MODE": { "value": "local" },
+    "JWT_SECRET": { "generator": "secret" },
+    "NOTES_ENCRYPTION_KEY": { "description": "Base64 32-byte AES key: openssl rand -base64 32", "required": true },
+    "CORS_ALLOWED_ORIGIN": { "description": "The mms-web URL, e.g. https://uod-ga-mms-web.herokuapp.com", "required": true },
+    "ADMIN_EMAIL": { "description": "First Administrator's email", "required": true },
+    "ADMIN_PASSWORD": { "description": "First Administrator's password (change after first sign-in)", "required": true },
+    "SEED_DEMO_DATA": { "value": "true", "description": "Synthetic demo data (never in production)" }
+  },
+  "formation": { "web": { "quantity": 1, "size": "basic" } },
+  "environments": {
+    "review": { "addons": ["jawsdb:kitefin"], "env": { "SEED_DEMO_DATA": "true" } }
+  }
+}

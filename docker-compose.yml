@@ -1,0 +1,16 @@
+# Local MySQL 8 (same engine as JawsDB). Run: docker compose up -d   then   mvn spring-boot:run -Dspring-boot.run.profiles=mysql
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: mms
+      MYSQL_USER: mms
+      MYSQL_PASSWORD: mms
+      MYSQL_ROOT_PASSWORD: root
+    command: ["--character-set-server=utf8mb4", "--collation-server=utf8mb4_0900_ai_ci", "--default-time-zone=+00:00"]
+    ports:
+      - "3306:3306"
+    volumes:
+      - mms-mysql:/var/lib/mysql
+volumes:
+  mms-mysql:

@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body style="font-family: Arial, sans-serif; font-size: 14px; color: #1b1b1b;">
+<p>Hello <span th:text="${name}">there</span>,</p>
+<p>You have been given an account on the GA Mentor Management System. Use the link below to choose your password. The link expires in 7 days.</p>
+<p><a th:href="${link}">Set my password</a></p>
+<p>After signing in, open <em>My account</em> to turn on two-step verification.</p>
+</body>
+</html>

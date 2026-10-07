@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body style="font-family: Arial, sans-serif; font-size: 14px; color: #1b1b1b;">
+<p>Hello <span th:text="${name}">there</span>,</p>
+<p>These advisees still need a mentor meeting for <strong th:text="${period}">this period</strong>:</p>
+<table style="border-collapse: collapse;" cellpadding="6">
+  <tr style="background:#f1f3f8;"><th align="left">Student</th><th align="left">Programme</th><th align="left">Last meeting</th><th align="left">Status</th></tr>
+  <tr th:each="r : ${rows}">
+    <td th:text="${r.studentName()}">name</td>
+    <td th:text="${r.programmeName()}">programme</td>
+    <td th:text="${r.lastMeetingDate() ?: 'None yet'}">date</td>
+    <td th:text="${r.status()}">status</td>
+  </tr>
+</table>
+<p><a th:href="${link}">Open My advisees</a></p>
+</body>
+</html>

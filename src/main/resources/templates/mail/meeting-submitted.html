@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body style="font-family: Arial, sans-serif; font-size: 14px; color: #1b1b1b;">
+<p>Mentor meeting with <strong th:text="${m.studentName()}">student</strong> on <strong th:text="${m.meetingDate()}">date</strong> recorded.</p>
+<p>The record is attached as a PDF laid out like the form, ready to forward to the student and workplace mentor for confirmation.</p>
+<p><a th:href="${link}">Open the record in MMS</a></p>
+<p style="color:#666;font-size:12px;">You receive this because you submitted the record. University of Dundee · Graduate Apprenticeships · Mentor Management System.</p>
+</body>
+</html>
